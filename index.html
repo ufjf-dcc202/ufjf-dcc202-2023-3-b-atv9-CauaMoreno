@@ -15,15 +15,38 @@
 
     <script>
 
-        let joao = 1;
-        let maria = 2;
+        let Joao = {
+            tipo: "maçã",
+            qtd: 1,
+            comeu: function(){
+                Joao.qtd--;
+            }
+        };
+        let Maria = {
+            tipo: "maçã",
+            qtd: 2,
+            comeu: function(){
+                Maria.qtd--;
+            }
+        };
 
         function deJoaoParaMaria(){
-            maria+= joao;
-            joao = 0;
+            Maria.qtd+= Joao.qtd;
+            Joao.qtd = 0;
         }
 
+        function deMariaParaJoao(){
+            Joao.qtd+= Maria.qtd;
+            Maria.qtd = 0;
+        }
+
+        console.log("Maria tinha ", Maria.qtd, " maçãs");
+
         deJoaoParaMaria();
+        console.log("Maria roubou João e agora tem ", Maria.qtd, " maçãs");
+
+        Maria.comeu();
+        console.log("Maria comeu uma Maçã e agora tem ", Maria.qtd, " maçãs");
 
     </script>
 </body>
